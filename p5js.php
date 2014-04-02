@@ -2,7 +2,7 @@
 /*
 Plugin Name: Processing code directly in your web page | p5js
 Plugin URI:
-Description: use shortcode to highlight syntax and use processingjs
+Description: shortcode to highlight syntax and create processingjs canvas
 syntax highlighter by lea verou http://prismjs.com/
 Version: 1.4.7
 Author: @benoitWimart 

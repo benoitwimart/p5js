@@ -1,7 +1,7 @@
 Your post content
-tips : add or remove "editor", "canvas" or both in the shortcode
+tips : add or remove "code", "canvas" or both in the shortcode
 
-[p5js editor canvas]// Global variables
+[p5js code canvas]// Global variables
 float radius = 50.0;
 int X, Y;
 int nX, nY;

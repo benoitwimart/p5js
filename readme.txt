@@ -18,7 +18,7 @@ Processing code directly in your web page
 
 1. Install 
 2. Activate 
-3. Add shortcode like [p5js editor canvas]void setup(){}[/p5js] (button in html editor)
+3. Add shortcode like [p5js code canvas]void setup(){}[/p5js] (button in html editor)
 
 == Frequently Asked Questions ==
 

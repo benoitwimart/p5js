@@ -39,7 +39,7 @@ global $post;
 $id="pjs-".$post->ID;
 
 return
-  (!in_array('editor', get_flags($params))?'':'<pre><code class="language-javascript">'.$content.'</code></pre>').
+  (!in_array('code', get_flags($params))?'':'<pre><code class="language-javascript">'.$content.'</code></pre>').
   (!in_array('canvas', get_flags($params))?'':'<script type="application/processing" data-processing-target="'.$id.'">'.$content.'</script>'.
 	'<canvas id="'.$id.'"> </canvas>');
 	}
@@ -63,7 +63,7 @@ function eg_quicktags() {
 * - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
 QTags.addButton( 'eg_paragraph', 'p', '<p>', '</p>', 'p' );
 */
-QTags.addButton( 'eg_p5js', 'p5js','[p5js editor canvas]', '[/p5js]', '' );
+QTags.addButton( 'eg_p5js', 'p5js','[p5js code canvas]', '[/p5js]', '' );
 </script>
 <?php
 }

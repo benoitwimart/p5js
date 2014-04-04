@@ -1,3 +1,7 @@
+TODO :
+• bug with & and WordPress
+• prismjs to extend for processing language
+
 === Processing code directly in your web page | p5js ===
 Contributors: @benoitwimart
 Donate link:

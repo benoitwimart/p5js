@@ -4,7 +4,7 @@ Plugin Name: Processing code directly in your web page | p5js
 Plugin URI:
 Description: shortcode to highlight syntax and create processingjs canvas
 syntax highlighter by lea verou http://prismjs.com/
-Version: 1.4.7
+Version: 1.4.7.1
 Author: @benoitWimart 
 Author URI: https://twitter.com/BenoitWimart
 License: GPL2
@@ -18,6 +18,13 @@ wp_enqueue_style( 'style-css', plugins_url('prism.css', __FILE__));
 /* for remove br and p */
 remove_filter( 'the_content', 'wpautop' );
 
+
+add_filter( 'no_texturize_shortcodes', 'shortcodes_to_exempt_from_wptexturize' );
+
+function shortcodes_to_exempt_from_wptexturize($shortcodes){
+    $shortcodes[] = 'p5js';
+    return $shortcodes;
+}
 
 function get_flags($atts) {
     $flags = array();
@@ -40,7 +47,7 @@ $id="pjs-".$post->ID;
 
 return
   (!in_array('code', get_flags($params))?'':'<pre><code class="language-javascript">'.$content.'</code></pre>').
-  (!in_array('canvas', get_flags($params))?'':'<script type="application/processing" data-processing-target="'.$id.'">'.$content.'</script>'.
+  (!in_array('canvas', get_flags($params))?'':'<script type="application/processing" data-processing-target="'.$id.'">'.html_entity_decode($content).'</script>'.
 	'<canvas id="'.$id.'"> </canvas>');
 	}
 
